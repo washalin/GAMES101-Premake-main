@@ -52,5 +52,15 @@ int main(){
 	std::cout << "Example of matrix multiply vector \n";
 	std::cout << i * v << std::endl;
 
+    //transform point
+	Eigen::Vector3f point(2.0f, 1.0f, 1.0f);
+	Eigen::Matrix3f transform;
+    transform << std::cos(45.0f/180.0f*acos(-1)), -std::sin(45.0f/180.0f*acos(-1)), 1.0f,
+                 std::sin(45.0f/180.0f*acos(-1)), std::cos(45.0f/180.0f*acos(-1)), 2.0f,
+		        0.0f, 0.0f, 1.0f;
+
+	std::cout << "Example of transform point \n";
+	std::cout << "Point: " << point << std::endl;
+	std::cout << "Transformed Point: " << transform * point << std::endl;
     return 0;
 }
